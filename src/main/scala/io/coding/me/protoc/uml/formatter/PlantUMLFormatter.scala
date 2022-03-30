@@ -94,7 +94,7 @@ object PlantUMLFormatter extends UMLFormatter {
 
           types.map { typ =>
             val fromName  = typ.identifier.toString
-            val relations = typ.referencedTypeIdentifiers.map(_.toString).map(toName => s"$fromName -- $toName")
+            val relations = typ.referencedTypeIdentifiers.map(_.toString).map(toName => s"$fromName *-- $toName")
 
             formatIterable(StructuredStringFormatter.newline, relations)
           }
